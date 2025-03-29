@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+      "baseUrl": "./src", // Define o diretório base
+      "paths": {
+        "@/*": ["*"] // Define o alias '@' para o diretório 'src'
+      }
+    },
+    "include": [
+      "src/**/*" // Inclui todos os arquivos dentro da pasta 'src'
+    ]
+  }
+  
