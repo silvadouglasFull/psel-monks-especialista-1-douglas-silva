@@ -33,10 +33,11 @@ Clone the repository to your local machine:
 
 ```bash
 git clone https://github.com/silvadouglasFull/psel-monks-especialista-1-douglas-silva
+git clone https://github.com/silvadouglasFull/api-psel-monks-especialista-1-douglas-silva
 cd psel-monks-especialista-1-douglas-silva
 
 ```
-
+- To Api see Readme.md from folder api-psel-monks-especialista-1-douglas-silva
 ### 2. Copy the Configuration File
 
 The project depends on a configuration file to work correctly. Before running Docker Compose, copy the src/config/flavor/monks.js file to the src/config/flavor/index.js directory:
