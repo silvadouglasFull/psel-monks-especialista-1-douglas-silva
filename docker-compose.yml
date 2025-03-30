@@ -1,0 +1,14 @@
+version: '3.3'
+
+services:
+  app:
+    build: .
+    container_name: react-vite-app
+    ports:
+      - "3000:3000"
+    networks:
+      - react-vite-network
+
+networks:
+  react-vite-network:
+    driver: bridge
