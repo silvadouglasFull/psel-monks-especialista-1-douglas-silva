@@ -1,20 +1,29 @@
-# This Docker Compose file defines a service for a Node.js application.
-# 
-# version: Specifies the Docker Compose file format version (3.3 in this case).
+# This Docker Compose file defines a multi-container application with the following configuration:
 #
-# services:
-#   node-app:
-#     build:
-#       context: Specifies the build context directory for the Docker image (current directory).
-#       dockerfile: Specifies the Dockerfile to use for building the image.
-#     ports:
-#       - Maps port 3001 on the host to port 3001 in the container.
-#     volumes:
-#       - Mounts the current directory on the host to the /app directory in the container.
-#     environment:
-#       - Sets the NODE_ENV environment variable to "production" inside the container.
-#     restart:
-#       - Configures the container to restart unless it is explicitly stopped.
+# Version:
+# - Uses Docker Compose file format version 3.3.
+#
+# Services:
+# - node-app:
+#   - A service for running a Node.js application.
+#   - Build:
+#     - The build context is set to the current directory (".").
+#     - The Dockerfile used for building the image is named "Dockerfile".
+#   - Ports:
+#     - Maps port 3000 on the host to port 3000 in the container.
+#     - Maps port 3001 on the host to port 3001 in the container.
+#   - Volumes:
+#     - Mounts the current directory (".") to the "/app" directory inside the container.
+#   - Environment:
+#     - Sets the environment variable NODE_ENV to "production".
+#   - Restart Policy:
+#     - Configured to restart the container unless it is explicitly stopped.
+#   - Networks:
+#     - Connects to a custom network named "vite_network".
+#
+# Networks:
+# - vite_network:
+#   - A custom bridge network used for inter-service communication.
 version: '3.3'
 
 services:
@@ -23,9 +32,16 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
+      - "3000:3000"
       - "3001:3001"
     volumes:
       - .:/app
     environment:
       - NODE_ENV=production
     restart: unless-stopped
+    networks:
+      - vite_network
+
+networks:
+  vite_network:
+    driver: bridge

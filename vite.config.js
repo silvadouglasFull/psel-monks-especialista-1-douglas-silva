@@ -27,10 +27,10 @@ export default defineConfig({
     strictPort: true,
   },
   server: {
-    port: 3001,
+    port: 3000,
     strictPort: true,
     host: true,
-    origin: "http://0.0.0.0:3001",
+    origin: "http://localhost:3000",
   },
   resolve: {
     alias: {
