@@ -1,14 +1,31 @@
+# This Docker Compose file defines a service for a Node.js application.
+# 
+# version: Specifies the Docker Compose file format version (3.3 in this case).
+#
+# services:
+#   node-app:
+#     build:
+#       context: Specifies the build context directory for the Docker image (current directory).
+#       dockerfile: Specifies the Dockerfile to use for building the image.
+#     ports:
+#       - Maps port 3001 on the host to port 3001 in the container.
+#     volumes:
+#       - Mounts the current directory on the host to the /app directory in the container.
+#     environment:
+#       - Sets the NODE_ENV environment variable to "production" inside the container.
+#     restart:
+#       - Configures the container to restart unless it is explicitly stopped.
 version: '3.3'
 
 services:
-  app:
-    build: .
-    container_name: react-vite-app
+  node-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
-      - "3000:3000"
-    networks:
-      - react-vite-network
-
-networks:
-  react-vite-network:
-    driver: bridge
+      - "3001:3001"
+    volumes:
+      - .:/app
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
