@@ -1,4 +1,4 @@
-import { colors } from "@/assets/colors";
+import { colors } from "@/assets/monks/colors";
 import styled from "styled-components";
 
 const Footer = styled.footer`

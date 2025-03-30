@@ -1,12 +1,31 @@
+/**
+ * TypeScript configuration for path alias and base URL.
+ * This configuration simplifies imports by setting up an alias for the `src` directory.
+ *
+ * - `baseUrl`: Defines the root directory for resolving non-relative imports. In this case, it's set to the `src` folder.
+ * - `paths`: Defines a path alias. The `@/*` alias maps to the `src/*` directory, so you can import files from `src` using `@/`.
+ * - `include`: Specifies the files to include in the project. In this case, it includes all files within the `src` folder and its subfolders.
+ *
+ * Example usage:
+ * - Importing a module from `src/components/Button.tsx` as:
+ *   ```ts
+ *   import Button from '@/components/Button';
+ *   ```
+ *
+ * @type {Object}
+ * @property {Object} compilerOptions - Configuration options for the TypeScript compiler.
+ * @property {string} compilerOptions.baseUrl - Sets the base directory for module resolution (in this case, `./src`).
+ * @property {Object} compilerOptions.paths - Configures path mappings to simplify imports, defining `@/*` as an alias for `src/*`.
+ * @property {Array<string>} include - Specifies files and folders to include in the compilation (here, everything under `src`).
+ */
 {
-    "compilerOptions": {
-      "baseUrl": "./src", // Define o diretório base
-      "paths": {
-        "@/*": ["*"] // Define o alias '@' para o diretório 'src'
-      }
-    },
-    "include": [
-      "src/**/*" // Inclui todos os arquivos dentro da pasta 'src'
-    ]
-  }
-  
+  "compilerOptions": {
+    "baseUrl": "./src", // Define o diretório base
+    "paths": {
+      "@/*": ["*"] // Define o alias '@' para o diretório 'src'
+    }
+  },
+  "include": [
+    "src/**/*" // Inclui todos os arquivos dentro da pasta 'src'
+  ]
+}

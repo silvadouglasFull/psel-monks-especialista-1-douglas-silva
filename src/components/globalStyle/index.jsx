@@ -1,8 +1,27 @@
-import { colors } from "@/assets/colors";
+import { colors } from "@/assets/monks/colors";
 import { createGlobalStyle } from "styled-components";
-
+/**
+ * GlobalStyle is a styled-components global stylesheet that resets default browser styles
+ * and sets the base styles for the entire application. It applies universal resets, font styles,
+ * body background color, and text color, and it ensures a consistent look across browsers.
+ *
+ * This component should be included at the root of your application to ensure consistent styling.
+ *
+ * The following styles are applied globally:
+ * - Basic reset of margin, padding, and box-sizing.
+ * - Font settings including 'Helvetica Neue' as the base font.
+ * - Background color and text color for the body.
+ * - List style reset for ordered and unordered lists.
+ * - Removal of text decoration for links.
+ * - Image responsiveness to prevent images from overflowing their containers.
+ *
+ * @component
+ * @example
+ * <GlobalStyle />
+ *
+ * @returns {JSX.Element} The global styles for the application.
+ */
 const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.cdnfonts.com/css/helvetica-neue-55');
   /* Reset básico de estilos */
   * {
     margin: 0;

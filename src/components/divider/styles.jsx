@@ -1,25 +1,40 @@
-import { colors } from "@/assets/colors";
-import { breakpoints } from "@/constants/breackPoints";
 import styled from "styled-components";
+import { colors } from "@/assets/monks/colors";
+import { breakpoints } from "@/constants/breackPoints";
+
+/**
+ * A styled container that provides padding and background color
+ * for the divider component. It adapts its padding based on
+ * the screen size using media queries for tablet and desktop breakpoints.
+ *
+ * @component
+ * @example
+ * <DividerContainer>
+ *   <StyledHr />
+ * </DividerContainer>
+ */
 const DividerContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  align-self: center;
   background-color: ${colors.dark};
-`;
-const DividerDiv = styled.div`
-  width: 21.875rem;
-  height: 0.0625rem;
-  background-color: ${colors.lightPurple};
+
   @media (min-width: ${breakpoints.tablet}) {
-    width: 43.75rem;
-    height: 0.25rem;
+    padding: 1.25rem;
   }
+
   @media (min-width: ${breakpoints.desktop}) {
-    width: 50rem;
-    height: 0.25rem;
+    padding: 2.5rem;
   }
 `;
-export { DividerContainer, DividerDiv };
+
+/**
+ * A styled `<hr>` element that represents a divider with a border.
+ * It uses the light purple color defined in the application's color palette.
+ *
+ * @component
+ * @example
+ * <StyledHr />
+ */
+const StyledHr = styled.hr`
+  border: 1px solid ${colors.lightPurple};
+`;
+
+export { DividerContainer, StyledHr };

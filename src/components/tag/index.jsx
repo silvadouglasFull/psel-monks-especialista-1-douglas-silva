@@ -1,5 +1,10 @@
-import { colors } from "@/assets/colors";
+import { colors } from "@/assets/monks/colors";
 import styled from "styled-components";
+/**
+ * `Tag` is a styled component that renders a clickable tag with custom styling.
+ * It displays the tag's text in a specific format, with padding, border, and background colors.
+ * It also has hover effects that change the background and text color.
+ */
 const Tag = styled.div`
   gap: 0.625rem;
   border-radius: 2rem;
@@ -15,6 +20,11 @@ const Tag = styled.div`
   border: 1px solid ${colors.lightPurple};
   text-align: center;
   margin: 0.1875rem;
-  background-color: #dfdcd5;
+  background-color: ${colors.riverShark};
+  cursor: pointer;
+  &:hover {
+    background-color: ${colors.purple};
+    color: ${colors.blank};
+  }
 `;
 export { Tag };

@@ -1,28 +1,29 @@
 import React from "react";
-import { HeroBackground } from "@/components/hero";
 import GlobalStyle from "@/components/globalStyle";
-import TopNav from "@/components/nav";
-import { AppSection } from "@/components/appSection";
-import { ProductSection } from "@/components/productSection";
-import { TagSection } from "@/components/tagSection";
-import { CardSection } from "@/components/cardSection";
-import { FormSection } from "./components/formSection";
-import { Footer } from "./components/footerSection";
-import { HeroSection } from "./components/heroSection";
+import FormContext from "./context/formContext";
+import { ToastContainer } from "react-toastify";
+import Router from "@/router";
+
+/**
+ * Main application component that wraps the entire app with essential context, styles, and routing.
+ * 
+ * @component
+ * @returns {JSX.Element} The root element of the application, containing the global context, styles, and routing.
+ */
 function App() {
   return (
     <>
-      <GlobalStyle />
-      <HeroBackground>
-        <TopNav />
-        <HeroSection />
-      </HeroBackground>
-      <ProductSection />
-      <AppSection />
-      <TagSection />
-      <CardSection />
-      <FormSection />
-      <Footer />
+      {/* Provides the form state context to the entire app */}
+      <FormContext>
+        {/* Toast container for showing toast notifications */}
+        <ToastContainer />
+        
+        {/* Global styles applied to the application */}
+        <GlobalStyle />
+        
+        {/* Main router for managing different routes and views */}
+        <Router />
+      </FormContext>
     </>
   );
 }

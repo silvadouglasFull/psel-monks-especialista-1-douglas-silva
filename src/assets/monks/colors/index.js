@@ -11,5 +11,6 @@ const colors = {
   grayLight: "#DFDCD5",
   fadedGrey: "#EAE8E4",
   carbonFiber: "#2D2D2D",
+  riverShark: "#dfdcd5",
 };
 export { colors };
